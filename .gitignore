@@ -1,0 +1,13 @@
+# Ignore compiled files
+*.exe
+*.out
+*.o
+
+# VS Code settings (optional)
+.vscode/
+
+# macOS or system-specific stuff
+.DS_Store
+
+# Backup files
+*~
