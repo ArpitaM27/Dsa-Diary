@@ -1,4 +1,4 @@
-/*#include<iostream>
+#include<iostream>
 using namespace std;
 int main(){
     int n;
@@ -46,7 +46,7 @@ int main(){
     cout<< sum<< " ";
     return 0;
 }
-    */
+    
   // sum of odd nos
    #include<iostream>
 using namespace std;
