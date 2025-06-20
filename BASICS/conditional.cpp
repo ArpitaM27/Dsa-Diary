@@ -30,7 +30,8 @@ cin>> n;
     cout << "invalid input";
     return 0;
 }
-    */
+    
+   //sum of nos
    #include<iostream>
 using namespace std;
 int main(){
@@ -39,8 +40,32 @@ int main(){
    cin>> n;
    for (int i = 0; i <=n; i++)
    {
-     cout<<
+    sum=sum+i;
+    
    }
+    cout<< sum<< " ";
+    return 0;
+}
+    */
+  // sum of odd nos
+   #include<iostream>
+using namespace std;
+int main(){
+   int sum=0,n;
+   cout << "state ur no";
+   cin>> n;
    
+   
+   for (int i = 0; i <=n; i++)
+   {
+    if (i%2!=0)
+    {
+       
+    
+    sum=sum+i;
+    }
+   }
+
+    cout<< sum<< " ";
     return 0;
 }
