@@ -22,4 +22,25 @@ int main(){
 return 0;
 }
 
-// add digits
+// find sum of digits
+#include<iostream>
+using namespace std;
+int sum(int a){
+    int res=0;
+   while(a!=0){
+        
+        res=res+a%10;
+        a=a/10;
+   }
+      return res;
+}
+int main(){
+    int n;
+    cout<< "enter no";
+    cin>> n;
+    int final=sum(n);
+        cout<< final << " ";
+    
+    
+return 0;
+}
