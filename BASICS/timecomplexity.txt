@@ -1,0 +1,14 @@
+time complexity= rate at which time taken icreases with respect to inpits size
+measured by big Oh notation
+ O()
+ inside bracket u write no of steps taken
+
+ rules:-
+ u take worse case scenario
+ ignore constants
+ avoid lower values
+
+ theta= avg complexity
+ omega=best case complexity
+
+ space complexity=auxillary space+input space
