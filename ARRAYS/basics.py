@@ -27,9 +27,9 @@ import array
 # arr=array('i',[])
 # n=int(input("Enter the length of array: "))
 
-for i in range(n):
-    x=int(input("Enter the next value: "))
-    arr.append(x)
+# for i in range(n):
+#     x=int(input("Enter the next value: "))
+#     arr.append(x)
 
-for j in range(n):
-    print(arr[j],end=" ")
+# for j in range(n):
+#     print(arr[j],end=" ")
