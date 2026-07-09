@@ -37,16 +37,31 @@
 
 # You must write an algorithm with O(log n) runtime complexity
 
-class Solution(object):
-    def search(self,nums,target):
-        low=0
-        high=len(nums)-1
-        while low<=high:
-            mid=(low+high)//2
-            if nums[mid]==target:
-                return mid
-            elif nums[mid]<target:
-                low=mid+1
-            else:
-                high=mid-1
-        return -1
+# class Solution(object):
+#     def search(self,nums,target):
+#         low=0
+#         high=len(nums)-1
+#         while low<=high:
+#             mid=(low+high)//2
+#             if nums[mid]==target:
+#                 return mid
+#             elif nums[mid]<target:
+#                 low=mid+1
+#             else:
+#                 high=mid-1
+#         return -1
+
+# Given a binary array nums, return the maximum number of consecutive 1's in the array.
+
+# class Solution(object):
+#     def findMaxConsecutiveOnes(self, nums):
+#         max_count=0
+#         current_count=0
+#         for i in range(len(nums)):
+#             if nums[i]==1:
+#                 current_count+=1
+#                 max_count=max(max_count,current_count)
+#             else:
+#                 current_count=0
+#         return max_counts
+
