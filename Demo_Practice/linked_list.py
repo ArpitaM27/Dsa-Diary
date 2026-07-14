@@ -51,18 +51,46 @@
 #         self.val = x
 #         self.next = None
 
-class Solution(object):
-    def hasCycle(self, head):
-        slow=head
-        fast=head
-        while(fast!=None and fast.next!=None):
+# class Solution(object):
+#     def hasCycle(self, head):
+#         slow=head
+#         fast=head
+#         while(fast!=None and fast.next!=None):
            
-                fast=fast.next.next
-                slow=slow.next
-                if(fast==slow):
-                          return True
+#                 fast=fast.next.next
+#                 slow=slow.next
+#                 if(fast==slow):
+#                           return True
             
-        return False
+#         return False
 
+#  Write an algorithm to determine if a number n is happy.
+
+# A happy number is a number defined by the following process:
+
+# Starting with any positive integer, replace the number by the sum of the squares of its digits.
+# Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+# Those numbers for which this process ends in 1 are happy.
+# Return true if n is a happy number, and false if not.
  
-
+class Solution(object):
+    def nextno(self,n):
+        total=0
+        while n>0:
+            
+            digit=n%10
+            total=total+digit*digit
+            n=n//10
+        return total
+    
+    def isHappy(self, n):
+        slow=n
+        fast=n
+        while True:
+             slow=self.nextno(slow)
+             fast=self.nextno(self.nextno(fast))
+             if (slow==1 or fast==1):
+                 return True
+             if(slow==fast):
+                  return False
+         
