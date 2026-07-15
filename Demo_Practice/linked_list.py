@@ -134,3 +134,22 @@ class Solution(object):
             prev=curr
             curr=next
         return prev
+
+# Given an integer x, return true if x is a palindrome, and false otherwise.
+
+class Solution(object):
+    def isPalindrome(self, x):
+        temp=x
+        sum=0
+        if x<0:
+            return False
+        
+        while temp!=0:
+            digit=temp%10
+            sum=sum*10+digit
+            temp//=10
+        
+        if(temp==x):
+            return True
+        else:
+            return False
