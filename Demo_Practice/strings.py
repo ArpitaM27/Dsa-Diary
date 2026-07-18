@@ -48,3 +48,15 @@ class Solution(object):
             slow+=1
             fast-=1
         return s
+
+# Given two string arrays word1 and word2, return true if the two arrays represent the same string, and false otherwise.
+
+# A string is represented by an array if the array elements concatenated in order forms the string.
+class Solution(object):
+    def arrayStringsAreEqual(self, word1, word2):
+        arr="".join(word1)
+        arr1="".join(word2)
+        if arr==arr1:
+            return True
+        else:
+            return False
