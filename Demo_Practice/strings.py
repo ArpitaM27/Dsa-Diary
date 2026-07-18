@@ -33,3 +33,18 @@ class Solution(object):
             return True
         return False
         
+    # Write a function that reverses a string. The input string is given as an array of characters s.
+
+# You must do this by modifying the input array in-place with O(1) extra memory.
+
+ 
+
+class Solution(object):
+    def reverseString(self, s):
+        slow=0
+        fast=len(s)-1
+        while slow<fast:
+            s[slow],s[fast]=s[fast],s[slow]
+            slow+=1
+            fast-=1
+        return s
