@@ -30,13 +30,23 @@ class Solution(object):
         d1={}
         d2={}
         for x in t:
-            if x in d1:
-                d1[x]+=1
-            else:
-                d1[x]=1
+                d1[x]=d1.get(x,0)+1
         for y in s:
-            if y in d2:
-                d2[y]+=1
-            else:
-                d2[y]=1
+                d2[x]=d2.get(y,0)+1
+                
         return d1==d2
+    
+# Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+ 
+class Solution(object):
+    def firstUniqChar(self, s):
+        d={}
+        for x in s:
+            d[x]=d.get(x,0)+1
+    
+        for i in range(len(s)):
+            if d[s[i]]==1:
+              return i
+        return -1
+           
+
