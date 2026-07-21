@@ -19,59 +19,59 @@
 
 # You must write an algorithm with O(log n) runtime complexity.
 
-# class Solution:
-#     def searchInsert(self, nums, target):
-#         low=0
-#         high=len(nums)-1
-#         while low<=high:
-#             mid=(low+high)//2
-#             if nums[mid]==target:
-#                 return mid
-#             elif nums[mid]<target:
-#                 low=mid+1
-#             else:
-#                 high=mid-1
-#         return low
+class Solution:
+    def searchInsert(self, nums, target):
+        low=0
+        high=len(nums)-1
+        while low<=high:
+            mid=(low+high)//2
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]<target:
+                low=mid+1
+            else:
+                high=mid-1
+        return low
 
 # Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
 
 # You must write an algorithm with O(log n) runtime complexity
 
-# class Solution(object):
-#     def search(self,nums,target):
-#         low=0
-#         high=len(nums)-1
-#         while low<=high:
-#             mid=(low+high)//2
-#             if nums[mid]==target:
-#                 return mid
-#             elif nums[mid]<target:
-#                 low=mid+1
-#             else:
-#                 high=mid-1
-#         return -1
+class Solution(object):
+    def search(self,nums,target):
+        low=0
+        high=len(nums)-1
+        while low<=high:
+            mid=(low+high)//2
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]<target:
+                low=mid+1
+            else:
+                high=mid-1
+        return -1
 
 # Given a binary array nums, return the maximum number of consecutive 1's in the array.
 
-# class Solution(object):
-#     def findMaxConsecutiveOnes(self, nums):
-#         max_count=0
-#         current_count=0
-#         for i in range(len(nums)):
-#             if nums[i]==1:
-#                 current_count+=1
-#                 max_count=max(max_count,current_count)
-#             else:
-#                 current_count=0
-#         return max_counts
+class Solution(object):
+    def findMaxConsecutiveOnes(self, nums):
+        max_count=0
+        current_count=0
+        for i in range(len(nums)):
+            if nums[i]==1:
+                current_count+=1
+                max_count=max(max_count,current_count)
+            else:
+                current_count=0
+        return max_count
 
 # Given a non-empty array of integers nums, every element appears twice except for one. Find that single one
-# class Solution(object):
-#     def singleNumber(self, nums):
-#         result=0
-#         for i in range(len(nums)):
-#             result=result^nums[i]
-#         return result 
+class Solution(object):
+    def singleNumber(self, nums):
+        result=0
+        for i in range(len(nums)):
+            result=result^nums[i]
+        return result 
 
 # Given an integer array nums, handle multiple queries of the following type:
 
@@ -81,20 +81,20 @@
 # NumArray(int[] nums) Initializes the object with the integer array nums.
 # int sumRange(int left, int right) Returns the sum of the elements of nums between indices left and right inclusive (i.e. nums[left] + nums[left + 1] + ... + nums[right]). 
 
-# class NumArray(object):
+class NumArray(object):
 
-#     def __init__(self, nums):
+    def __init__(self, nums):
         
-#         self.prefix_sum = [0] * (len(nums))
-#         self.prefix_sum[0] = nums[0]
-#         for i in range(1, len(nums)):
-#             self.prefix_sum[i] = self.prefix_sum[i - 1] + nums[i]
+        self.prefix_sum = [0] * (len(nums))
+        self.prefix_sum[0] = nums[0]
+        for i in range(1, len(nums)):
+            self.prefix_sum[i] = self.prefix_sum[i - 1] + nums[i]
 
     
-#     def sumRange(self, left, right):
-#         if left == 0:
-#             return self.prefix_sum[right]
-#         return self.prefix_sum[right] - self.prefix_sum[left - 1]
+    def sumRange(self, left, right):
+        if left == 0:
+            return self.prefix_sum[right]
+        return self.prefix_sum[right] - self.prefix_sum[left - 1]
       
     
         
@@ -102,11 +102,11 @@
 
 # Return the running sum of nums.
 
-# class Solution(object):
-#     def runningSum(self, nums):
-#         for i in range(1, len(nums)):
-#             nums[i] += nums[i - 1]
-#         return nums
+class Solution(object):
+    def runningSum(self, nums):
+        for i in range(1, len(nums)):
+            nums[i] += nums[i - 1]
+        return nums
 
 
 # There is a biker going on a road trip. The road trip consists of n + 1 points at various altitudes. The biker starts his trip on point 0 with altitude equal 0.
@@ -233,3 +233,4 @@ class Solution(object):
            fast+=1
            
        return slow
+   
