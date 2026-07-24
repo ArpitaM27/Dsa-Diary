@@ -268,21 +268,36 @@
 # You must write an algorithm that runs in O(n) time and without using the division operation.
 
  
+# class Solution(object):
+#     def productExceptSelf(self, nums):
+#         n = len(nums)
+#         left=[1]*n
+#         right=[1]*n
+
+#         for i in range(1, n):
+#             left[i] = left[i - 1] * nums[i - 1]
+
+#         for i in range(n - 2, -1, -1):
+#             right[i] = right[i + 1] * nums[i + 1]
+
+#         ans = []
+
+#         for i in range(n):
+#             ans.append(left[i] * right[i])
+
+#         return ans
+
+# Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+
+ 
 class Solution(object):
-    def productExceptSelf(self, nums):
-        n = len(nums)
-        left=[1]*n
-        right=[1]*n
-
-        for i in range(1, n):
-            left[i] = left[i - 1] * nums[i - 1]
-
-        for i in range(n - 2, -1, -1):
-            right[i] = right[i + 1] * nums[i + 1]
-
-        ans = []
-
-        for i in range(n):
-            ans.append(left[i] * right[i])
-
-        return ans
+    def sortedSquares(self, nums):
+       arr=[]
+       for x in nums:
+           arr.append(x*x)
+       arr=sorted(arr)
+       return arr
+   
+obj=Solution()
+nums=[-1,0,8,7,2,3,5]
+print(obj.sortedSquares(nums))
