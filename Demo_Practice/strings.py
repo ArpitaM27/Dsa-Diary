@@ -112,20 +112,20 @@
 
 # Note that n! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1  
 
-from math import factorial
-class Solution(object):
-    def trailingZeroes(self, n):
-        x=factorial(n)
-        count=0
-        x=str(x)
-        i=len(x)-1
-        while x[i]=='0':
-            count+=1
-            i=i-1
+# from math import factorial
+# class Solution(object):
+#     def trailingZeroes(self, n):
+#         x=factorial(n)
+#         count=0
+#         x=str(x)
+#         i=len(x)-1
+#         while x[i]=='0':
+#             count+=1
+#             i=i-1
             
     
-        return count
+#         return count
     
-obj=Solution()
-n=10
-print(obj.trailingZeroes(n))
+# obj=Solution()
+# n=10
+# print(obj.trailingZeroes(n))
