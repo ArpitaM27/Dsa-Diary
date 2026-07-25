@@ -309,15 +309,28 @@
 # Initially, the value of X is 0.
 
 # Given an array of strings operations containing a list of operations, return the final value of X after performing all the operations.  
+# class Solution(object):
+#     def finalValueAfterOperations(self, operations):
+#         val=0
+#         for x in operations:
+#             if x==("++X")or x== "X++":
+#                 val=val+1
+#             if x==("--X") or x=="X--":
+#                 val=val-1
+#         return val
+# obj=Solution()
+# m=["--X","X++","X++"]
+# print(obj.finalValueAfterOperations(m))
+
+# Given a valid (IPv4) IP address, return a defanged version of that IP address.
+
+# A defanged IP address replaces every period "." with "[.]".
+
 class Solution(object):
-    def finalValueAfterOperations(self, operations):
-        val=0
-        for x in operations:
-            if x==("++X")or x== "X++":
-                val=val+1
-            if x==("--X") or x=="X--":
-                val=val-1
-        return val
+    def defangIPaddr(self, address):
+      
+            address=address.replace(".","[.]")
+            return address
 obj=Solution()
-m=["--X","X++","X++"]
-print(obj.finalValueAfterOperations(m))
+m="1.1.1.1"
+print(obj.defangIPaddr(m))
