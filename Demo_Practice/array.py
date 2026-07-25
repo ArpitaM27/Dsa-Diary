@@ -290,14 +290,34 @@
 # Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
 
  
-class Solution(object):
-    def sortedSquares(self, nums):
-       arr=[]
-       for x in nums:
-           arr.append(x*x)
-       arr=sorted(arr)
-       return arr
+# class Solution(object):
+#     def sortedSquares(self, nums):
+#        arr=[]
+#        for x in nums:
+#            arr.append(x*x)
+#        arr=sorted(arr)
+#        return arr
    
+# obj=Solution()
+# nums=[-1,0,8,7,2,3,5]
+# print(obj.sortedSquares(nums))
+
+# There is a programming language with only four operations and one variable X:
+
+# ++X and X++ increments the value of the variable X by 1.
+# --X and X-- decrements the value of the variable X by 1.
+# Initially, the value of X is 0.
+
+# Given an array of strings operations containing a list of operations, return the final value of X after performing all the operations.  
+class Solution(object):
+    def finalValueAfterOperations(self, operations):
+        val=0
+        for x in operations:
+            if x==("++X")or x== "X++":
+                val=val+1
+            if x==("--X") or x=="X--":
+                val=val-1
+        return val
 obj=Solution()
-nums=[-1,0,8,7,2,3,5]
-print(obj.sortedSquares(nums))
+m=["--X","X++","X++"]
+print(obj.finalValueAfterOperations(m))
