@@ -29,13 +29,33 @@
 
 # An integer n is a power of two, if there exists an integer x such that n == 2x.
 
-class Solution(object):
-    def isPowerOfTwo(self, n):
-        if n <= 0:
-            return False
+# class Solution(object):
+#     def isPowerOfTwo(self, n):
+#         if n <= 0:
+#             return False
 
-        return (n & (n - 1)) == 0
+#         return (n & (n - 1)) == 0
     
+# obj=Solution()
+# n=0
+# print(obj.isPowerOfTwo(n))
+
+# Given an integer n, return an array ans of length n + 1 such that for each i (0 <= i <= n), ans[i] is the number of 1's in the binary representation of i.
+ 
+class Solution(object):
+    def countBits(self, n):
+        arr=[0]* (n+1)
+        
+        for i in range(0,n+1,1):
+            sum=0
+            j=i
+            while j:
+                j=(j&(j-1))
+                sum+=1
+            arr[i]=sum
+        return arr
+         
+         
 obj=Solution()
-n=0
-print(obj.isPowerOfTwo(n))
+n=2
+print(obj.countBits(n))
