@@ -326,11 +326,13 @@
 
 # A defanged IP address replaces every period "." with "[.]".
 
-class Solution(object):
-    def defangIPaddr(self, address):
+# class Solution(object):
+#     def defangIPaddr(self, address):
       
-            address=address.replace(".","[.]")
-            return address
-obj=Solution()
-m="1.1.1.1"
-print(obj.defangIPaddr(m))
+#             address=address.replace(".","[.]")
+#             return address
+# obj=Solution()
+# m="1.1.1.1"
+# print(obj.defangIPaddr(m)) 
+
+
