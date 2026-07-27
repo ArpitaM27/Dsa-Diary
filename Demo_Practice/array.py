@@ -340,27 +340,27 @@
 # A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
 
  
-class Solution(object):
-    def isSubsequence(self, s, t):
-      a=0
-      b=0
-      if len(s)==0:
-          return True
-      while b < len(t):
+# class Solution(object):
+#     def isSubsequence(self, s, t):
+#       a=0
+#       b=0
+#       if len(s)==0:
+#           return True
+#       while b < len(t):
           
-          if s[a]==t[b]:
+#           if s[a]==t[b]:
              
-             if (a==(len(s)-1)):
-                 return True
-             a=a+1
-             b=b+1
-          else:
-              b=b+1
-      return False    
+#              if (a==(len(s)-1)):
+#                  return True
+#              a=a+1
+#              b=b+1
+#           else:
+#               b=b+1
+#       return False    
   
-obj=Solution()
-s = ""
-t = "ahbgdc"
-print(obj.isSubsequence(s,t))
+# obj=Solution()
+# s = ""
+# t = "ahbgdc"
+# print(obj.isSubsequence(s,t))
           
-       
+

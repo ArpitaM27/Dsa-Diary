@@ -70,51 +70,51 @@
 
 # Starting with any positive integer, replace the number by the sum of the squares of its digits.
 # Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
-# Those numbers for which this process ends in 1 are happy.
-# Return true if n is a happy number, and false if not.
+# # Those numbers for which this process ends in 1 are happy.
+# # Return true if n is a happy number, and false if not.
  
-class Solution(object):
-    def nextno(self,n):
-        total=0
-        while n>0:
+# class Solution(object):
+#     def nextno(self,n):
+#         total=0
+#         while n>0:
             
-            digit=n%10
-            total=total+digit*digit
-            n=n//10
-        return total
+#             digit=n%10
+#             total=total+digit*digit
+#             n=n//10
+#         return total
     
-    def isHappy(self, n):
-        slow=n
-        fast=n
-        while True:
-             slow=self.nextno(slow)
-             fast=self.nextno(self.nextno(fast))
-             if (slow==1 or fast==1):
-                 return True
-             if(slow==fast):
-                  return False
+#     def isHappy(self, n):
+#         slow=n
+#         fast=n
+#         while True:
+#              slow=self.nextno(slow)
+#              fast=self.nextno(self.nextno(fast))
+#              if (slow==1 or fast==1):
+#                  return True
+#              if(slow==fast):
+#                   return False
          
-# There is a singly-linked list head and we want to delete a node node in it.
+# # There is a singly-linked list head and we want to delete a node node in it.
 
-# You are given the node to be deleted node. You will not be given access to the first node of head.
+# # You are given the node to be deleted node. You will not be given access to the first node of head.
 
-# All the values of the linked list are unique, and it is guaranteed that the given node node is not the last node in the linked list.
+# # All the values of the linked list are unique, and it is guaranteed that the given node node is not the last node in the linked list.
 
-# Delete the given node. Note that by deleting the node, we do not mean removing it from memory. We mean:
+# # Delete the given node. Note that by deleting the node, we do not mean removing it from memory. We mean:
 
-# The value of the given node should not exist in the linked list.
-# The number of nodes in the linked list should decrease by one.
-# All the values before node should be in the same order.
-# All the values after node should be in the same order.  
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-class Solution(object):
-    def deleteNode(self, node):
-        node.val = node.next.val
-        node.next = node.next.next     
+# # The value of the given node should not exist in the linked list.
+# # The number of nodes in the linked list should decrease by one.
+# # All the values before node should be in the same order.
+# # All the values after node should be in the same order.  
+# # Definition for singly-linked list.
+# # class ListNode(object):
+# #     def __init__(self, x):
+# #         self.val = x
+# #         self.next = None
+# class Solution(object):
+#     def deleteNode(self, node):
+#         node.val = node.next.val
+#         node.next = node.next.next     
         
 # Given the head of a singly linked list, reverse the list, and return the reversed list.
  
@@ -123,49 +123,50 @@ class Solution(object):
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+# class Solution(object):
+#     def reverseList(self, head):
+#         prev=None
+#         curr=head
+#         next=None
+#         while curr is not None:
+#             next=curr.next
+#             curr.next=prev
+#             prev=curr
+#             curr=next
+#         return prev
+
+
+
+# Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution(object):
-    def reverseList(self, head):
-        prev=None
-        curr=head
-        next=None
-        while curr is not None:
-            next=curr.next
-            curr.next=prev
-            prev=curr
-            curr=next
-        return prev
+    def deleteDuplicates(self, head):
+        slow=head
+        while (slow and slow.next!=None):
+            if(slow.val==slow.next.val):
+             slow.next=slow.next.next
+            else:
+                slow=slow.next
+        return head
 
-# Given an integer x, return true if x is a palindrome, and false otherwise.
+obj=Solution()
+head = [1,1,2,3,3]
+print(obj.deleteDuplicates(1))
+             
+    
+#     Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
 
-class Solution(object):
-    def isPalindrome(self, x):
-        temp=x
-        sum=0
-        if x<0:
-            return False
-        
-        while temp!=0:
-            digit=temp%10
-            sum=sum*10+digit
-            temp//=10
-        
-        if(temp==x):
-            return True
-        else:
-            return False
-
-# You are given two strings s and t.
-
-# String t is generated by random shuffling string s and then add one more letter at a random position.
-
-# Return the letter that was added to t.
-class Solution(object):
-    def findTheDifference(self, s, t):
-        s = sorted(s)
-        t = sorted(t)
-
-        for i in range(len(s)):
-            if s[i] != t[i]:
-                return t[i]
-
-        return t[-1]
+# class Solution(object):
+#     def isPalindrome(self, head):
+#         fast=head
+#         slow=head
+#         while(fast!=None and fast.next!=None):
+#             fast=fast.next.next
+#             slow=slow.next
+            
+            
