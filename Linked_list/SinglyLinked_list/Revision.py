@@ -41,6 +41,17 @@ class LinkedList:
             else:
                 self.head=temp
                 
+        def search(self,val):
+            t1=self.head
+            count=1
+            while(t1!=None):
+                if(t1.data==val):
+                    print(count)
+                    break
+                else:
+                  t1=t1.next
+                  count+=1
+            
                 
         def delete_at_position(self,val):
             if(self.head!=None):
@@ -59,6 +70,14 @@ class LinkedList:
                        t1=t1.next
             else:
                 print("Linked list doesnt exist")
+                
+        def length(self):
+            t1=self.head
+            count=0
+            while(t1!=None):
+                count+=1
+                t1=t1.next
+            return print(count)
 
         def print_list(self):
              t1=self.head
@@ -74,7 +93,8 @@ obj.insert_at_beginning(8)
 obj.insert_at_postn(4,7)
 obj.insert_at_end(19)
 obj.delete_at_position(8)
+obj.length()
 
 obj.print_list()
-                
-                
+obj.search(5)
+  
