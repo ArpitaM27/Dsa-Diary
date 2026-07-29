@@ -372,33 +372,59 @@
 
 # Notice that you may not slant the container.
 
-class Solution(object):
-    def maxArea(self, height):
-     left=0
-     right=len(height)-1
+# class Solution(object):
+#     def maxArea(self, height):
+#      left=0
+#      right=len(height)-1
      
-     best = 0
-     while(left<right):
-         base=right-left
-         if height[right]==height[left]:
-             area=base*height[left]
-             right-=1
-             best = max(best, area)
-             continue
-         if height[left]<height[right]:
-             area=base*min(height[left],height[right])
-             left=left+1
-             best = max(best, area)
-             continue
-         if height[left]>height[right]:
-             area=base*min(height[right],height[left])
-             right=right-1
-             best = max(best, area)
-             continue
-     return best
+#      best = 0
+#      while(left<right):
+#          base=right-left
+#          if height[right]==height[left]:
+#              area=base*height[left]
+#              right-=1
+#              best = max(best, area)
+#              continue
+#          if height[left]<height[right]:
+#              area=base*min(height[left],height[right])
+#              left=left+1
+#              best = max(best, area)
+#              continue
+#          if height[left]>height[right]:
+#              area=base*min(height[right],height[left])
+#              right=right-1
+#              best = max(best, area)
+#              continue
+#      return best
 
-obj=Solution()
-height = [1,8,6,2,5,4,8,3,7]
-print(obj.maxArea(height))             
+# obj=Solution()
+# height = [1,8,6,2,5,4,8,3,7]
+# print(obj.maxArea(height))             
              
     
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        slow=0
+        fast=1
+        k=1
+        while fast<len(nums):
+            if nums[slow]==nums[fast]:
+                fast+=1
+                continue
+                
+            if nums[slow]!=nums[fast]:
+                x=nums.pop(fast)
+                nums.insert(slow+1,x)
+                slow+=1
+                fast+=1
+                k+=1
+                continue
+        return k
+obj=Solution()
+nums=[1,1,2]
+print(obj.removeDuplicates(nums))
+    
+                
+                
+        
+        
