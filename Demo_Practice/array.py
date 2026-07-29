@@ -402,29 +402,56 @@
 # print(obj.maxArea(height))             
              
     
-class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
-        slow=0
-        fast=1
-        k=1
-        while fast<len(nums):
-            if nums[slow]==nums[fast]:
-                fast+=1
-                continue
+# class Solution:
+#     def removeDuplicates(self, nums: List[int]) -> int:
+#         slow=0
+#         fast=1
+#         k=1
+#         while fast<len(nums):
+#             if nums[slow]==nums[fast]:
+#                 fast+=1
+#                 continue
                 
-            if nums[slow]!=nums[fast]:
-                x=nums.pop(fast)
-                nums.insert(slow+1,x)
-                slow+=1
-                fast+=1
-                k+=1
-                continue
-        return k
-obj=Solution()
-nums=[1,1,2]
-print(obj.removeDuplicates(nums))
+#             if nums[slow]!=nums[fast]:
+#                 x=nums.pop(fast)
+#                 nums.insert(slow+1,x)
+#                 slow+=1
+#                 fast+=1
+#                 k+=1
+#                 continue
+#         return k
+# obj=Solution()
+# nums=[1,1,2]
+# print(obj.removeDuplicates(nums))
     
+             
                 
-                
-        
-        
+# Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+# class Solution(object):
+#     def rotate(self, nums, k):
+       
+#         fast=len(nums)-1
+#         while k>0:
+#             x=nums.pop(fast)
+#             nums.insert(0,x)
+#             k-=1
+#         return nums
+# obj=Solution()
+# nums = [-1,-100,3,99]
+# k = 2
+# print(obj.rotate(nums,k))
+
+#optimal solution
+class Solution(object):
+    def rotate(self, nums, k):
+       k=k%len(nums)
+       last=nums[-k:]
+       first=nums[:-k]
+       return last+first
+    #    first=nums[:k]
+    #    return first+last
+       
+obj=Solution()
+nums = [1,2,3,4,5,6,7]
+k = 3
+print(obj.rotate(nums,k))
