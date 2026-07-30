@@ -73,21 +73,31 @@
 
 # Each letter in magazine can only be used once in ransomNote
 
-class Solution(object):
-    def canConstruct(self, ransomNote, magazine):
-        d1={}
-        d2={}
-        for x in ransomNote:
-            d1[x]=d1.get(x,0)+1
-        for x in magazine:
-            d2[x]=d2.get(x,0)+1
-        for ch in d1:
-            if d1.get(ch,0)>d2.get(ch,0):
-                return False
-        return True
+# class Solution(object):
+#     def canConstruct(self, ransomNote, magazine):
+#         d1={}
+#         d2={}
+#         for x in ransomNote:
+#             d1[x]=d1.get(x,0)+1
+#         for x in magazine:
+#             d2[x]=d2.get(x,0)+1
+#         for ch in d1:
+#             if d1.get(ch,0)>d2.get(ch,0):
+#                 return False
+#         return True
     
-obj=Solution()
-x="aaa"
-y="aban"
-print(obj.canConstruct(x,y))
-                
+# obj=Solution()
+# x="aaa"
+# y="aban"
+# print(obj.canConstruct(x,y))
+
+# Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.  
+# class Solution(object):
+#     def containsNearbyDuplicate(self, nums, k):
+#      d={}
+#      for i in range(len(nums)):
+#          if nums[i] in d:
+#              if i-d[nums[i]]<=k:
+#               return True   
+#          d[nums[i]]=i   
+#      return False
