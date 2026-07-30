@@ -1,105 +1,93 @@
-# Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct. 
+# # Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct. 
 
-class Solution(object):
-    def containsDuplicate(self, nums):
-       d={}
-       for x in nums:
-           if x in d:
-               return True
-           else:
-               d[x]=1
-       return False
+# class Solution(object):
+#     def containsDuplicate(self, nums):
+#        d={}
+#        for x in nums:
+#            if x in d:
+#                return True
+#            else:
+#                d[x]=1
+#        return False
    
-#using sets
+# #using sets
+# class Solution(object):
+#     def containsDuplicate(self, nums):
+#         seen = set()
+
+#         for x in nums:
+#             if x in seen:
+#                 return True
+
+#             seen.add(x)
+
+#         return False
+
+# # Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+# class Solution(object):
+#     def isAnagram(self, s, t):
+#         d1={}
+#         d2={}
+#         for x in t:
+#                 d1[x]=d1.get(x,0)+1
+#         for y in s:
+#                 d2[x]=d2.get(y,0)+1
+                
+#         return d1==d2
+    
+# # Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+ 
+# class Solution(object):
+#     def firstUniqChar(self, s):
+#         d={}
+#         for x in s:
+#             d[x]=d.get(x,0)+1
+    
+#         for i in range(len(s)):
+#             if d[s[i]]==1:
+#               return i
+#         return -1
+           
+# # Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+
+ 
+
+# # Example 1:
+
+# # Input: strs = ["eat","tea","tan","ate","nat","bat"]
+
+# # Output: [["bat"],["nat","tan"],["ate","eat","tea"]]  
+
+# from collections import defaultdict
+# class Solution(object):
+#     def groupAnagrams(self, strs):
+#         d = defaultdict(list)
+#         for x in strs:
+#             s=sorted(x)
+#             key = "".join(s)
+#             d[key].append(x)
+#         return list(d.values())
+        
+# Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+
+# Each letter in magazine can only be used once in ransomNote
+
 class Solution(object):
-    def containsDuplicate(self, nums):
-        seen = set()
-
-        for x in nums:
-            if x in seen:
-                return True
-
-            seen.add(x)
-
-        return False
-
-# Given two strings s and t, return true if t is an anagram of s, and false otherwise.
-
-class Solution(object):
-    def isAnagram(self, s, t):
+    def canConstruct(self, ransomNote, magazine):
         d1={}
         d2={}
-        for x in t:
-                d1[x]=d1.get(x,0)+1
-        for y in s:
-                d2[x]=d2.get(y,0)+1
-                
-        return d1==d2
-    
-# Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
- 
-class Solution(object):
-    def firstUniqChar(self, s):
-        d={}
-        for x in s:
-            d[x]=d.get(x,0)+1
-    
-        for i in range(len(s)):
-            if d[s[i]]==1:
-              return i
-        return -1
-           
-# Given an array of strings strs, group the anagrams together. You can return the answer in any order.
-
- 
-
-# Example 1:
-
-# Input: strs = ["eat","tea","tan","ate","nat","bat"]
-
-# Output: [["bat"],["nat","tan"],["ate","eat","tea"]]  
-
-from collections import defaultdict
-class Solution(object):
-    def groupAnagrams(self, strs):
-        d = defaultdict(list)
-        for x in strs:
-            s=sorted(x)
-            key = "".join(s)
-            d[key].append(x)
-        return list(d.values())
-        
-# Given two strings s and t, determine if they are isomorphic.
-
-# Two strings s and t are isomorphic if the characters in s can be replaced to get t.
-
-# All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
-
-class Solution(object):
-    def isIsomorphic(self, s, t):
-
-        if len(s) != len(t):
-            return False
-
-        s_to_t = {}
-        t_to_s = {}
-
-        for i in range(len(s)):
-
-            # If mapping already exists, it must match
-            if s[i] in s_to_t:
-                if s_to_t[s[i]] != t[i]:
-                    return False
-            else:
-                s_to_t[s[i]] = t[i]
-
-            # Reverse mapping must also match
-            if t[i] in t_to_s:
-                if t_to_s[t[i]] != s[i]:
-                    return False
-            else:
-                t_to_s[t[i]] = s[i]
-
+        for x in ransomNote:
+            d1[x]=d1.get(x,0)+1
+        for x in magazine:
+            d2[x]=d2.get(x,0)+1
+        for ch in d1:
+            if d1.get(ch,0)>d2.get(ch,0):
+                return False
         return True
-    (lc 205 solve again)
     
+obj=Solution()
+x="aaa"
+y="aban"
+print(obj.canConstruct(x,y))
+                
