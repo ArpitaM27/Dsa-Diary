@@ -108,12 +108,34 @@
 
 # You can return the answer in any order.
 
+# class Solution(object):
+#     def twoSum(self, nums, target):
+#         d={}
+#         for i in range(len(nums)):
+#                 need=target-nums[i]
+#                 if need in d:
+#                   return[i,d[need]]
+#                 d[nums[i]]=i
+#         return False
+
+# You are given an integer array nums. The unique elements of an array are the elements that appear exactly once in the array.
+
+# Return the sum of all the unique elements of nums.
+
 class Solution(object):
-    def twoSum(self, nums, target):
+    def sumOfUnique(self, nums):
         d={}
+        res=0
         for i in range(len(nums)):
-                need=target-nums[i]
-                if need in d:
-                  return[i,d[need]]
-                d[nums[i]]=i
-        return Falses
+            d[nums[i]]=d.get(nums[i],0)+1
+            
+        for x in d:
+            
+            if d[x]==1:
+                res+=x
+        return res
+                
+                
+obj=Solution()
+nums = [1,2,3,2]
+print(obj.sumOfUnique(nums))
