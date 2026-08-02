@@ -40,18 +40,62 @@
 # Return the final string after all such duplicate removals have been made. It can be proven that the answer is unique.
 
  
-class Solution(object):
-    def removeDuplicates(self, s):
-        stack=[]
-        for ch in s:
+# class Solution(object):
+#     def removeDuplicates(self, s):
+#         stack=[]
+#         for ch in s:
         
-            if stack and stack[-1]==ch:
-                stack.pop()
+#             if stack and stack[-1]==ch:
+#                 stack.pop()
                 
-            else:
-                stack.append(ch)
+#             else:
+#                 stack.append(ch)
                 
-        return "".join(stack)
-obj=Solution()
-s = "abbaca"
-print(obj.removeDuplicates(s))
+#         return "".join(stack)
+# obj=Solution()
+# s = "abbaca"
+# print(obj.removeDuplicates(s))
+
+# You are keeping the scores for a baseball game with strange rules. At the beginning of the game, you start with an empty record.
+
+# You are given a list of strings operations, where operations[i] is the ith operation you must apply to the record and is one of the following:
+
+# An integer x.
+# Record a new score of x.
+# '+'.
+# Record a new score that is the sum of the previous two scores.
+# 'D'.
+# Record a new score that is the double of the previous score.
+# 'C'.
+# Invalidate the previous score, removing it from the record.
+# Return the sum of all the scores on the record after applying all the operations.
+
+# The test cases are generated such that the answer and all intermediate calculations fit in a 32-bit integer and that all operations are valid.  
+
+
+# class Solution(object):
+#     def calPoints(self, operations):
+#         stack=[]
+#         for x in operations:
+#             if stack and x=="C":
+#                 stack.pop()
+#                 continue
+#             if stack and x=="D":
+#                 y=stack[-1]
+#                 stack.append(2*y)
+#                 continue
+#             if stack and x=="+":
+#                 y=int(stack[-2])
+#                 z=int(stack[-1])
+#                 k=y+z
+#                 stack.append(k)
+#                 continue
+#             else:
+#                 stack.append(int(x))
+#                 continue
+       
+#         return sum(stack)
+# obj=Solution()
+# ops = ["1","C"]
+# print(obj.calPoints(ops))
+
