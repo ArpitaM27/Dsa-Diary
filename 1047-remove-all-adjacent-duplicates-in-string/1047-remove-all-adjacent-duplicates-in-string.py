@@ -2,12 +2,13 @@
 class Solution(object):
     def removeDuplicates(self, s):
         stack=[]
-        i=0
-        while (i<len(s)):
-            if stack and stack[-1]==s[i]:
+        for ch in s:
+        
+            if stack and stack[-1]==ch:
                 stack.pop()
-                i+=1
+                
             else:
-                stack.append(s[i])
-                i+=1
+                stack.append(ch)
+                
         return "".join(stack)
+        
