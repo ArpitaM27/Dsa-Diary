@@ -462,13 +462,13 @@
 # Return k after placing the final result in the first k slots of nums.
 
 # Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
-class Solution(object):
-    def removeDuplicates(self, nums):
-      slow=2
+# class Solution(object):
+#     def removeDuplicates(self, nums):
+#       slow=2
       
-      for fast in range(2,len(nums)):
-           if nums[fast]!=nums[slow-2]:
-               nums[slow]=nums[fast]
-               slow+=1
-      return slow
-            
+#       for fast in range(2,len(nums)):
+#            if nums[fast]!=nums[slow-2]:
+#                nums[slow]=nums[fast]
+#                slow+=1
+#       return slow
+
