@@ -108,16 +108,42 @@
 # Return an array ans of length nums1.length such that ans[i] is the next greater element as described above      
 
 
+# class Solution(object):
+#     def nextGreaterElement(self, nums1, nums2):
+#         d={}
+#         stack=[]
+#         for num in nums2:
+#             while stack and num>stack[-1]:
+#                  d[stack.pop()] = num
+#             stack.append(num)
+
+#         while stack:
+#             d[stack.pop()] = -1
+
+#         return [d[num] for num in nums1]
+    
+# Given a circular integer array nums (i.e., the next element of nums[nums.length - 1] is nums[0]), return the next greater number for every element in nums.
+
+# The next greater number of a number x is the first greater number to its traversing-order next in the array, which means
+# you could search circularly to find its next greater number. If it doesn't exist, return -1 for this number.
+
+# Given a circular integer array nums (i.e., the next element of nums[nums.length - 1] is nums[0]), return the next greater number for every element in nums.
+
+# The next greater number of a number x is the first greater number to its traversing-order next in the array, which means
+# you could search circularly to find its next greater number. If it doesn't exist, return -1 for this number.
+
 class Solution(object):
-    def nextGreaterElement(self, nums1, nums2):
-        d={}
-        stack=[]
-        for num in nums2:
-            while stack and num>stack[-1]:
-                 d[stack.pop()] = num
-            stack.append(num)
-
-        while stack:
-            d[stack.pop()] = -1
-
-        return [d[num] for num in nums1]
+    def nextGreaterElements(self, nums):
+    
+       arr = [-1] * len(nums)
+       stack=[]
+       i=0
+       for i in range(2*len(nums)):
+           idx=i%len(nums)
+           while stack and nums[idx]>nums[stack[-1]]:
+               arr[stack.pop()]=(nums[idx])
+           if i<len(nums):
+            stack.append(idx)
+      
+       return arr
+    
