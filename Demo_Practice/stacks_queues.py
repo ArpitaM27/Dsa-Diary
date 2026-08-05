@@ -132,18 +132,33 @@
 # The next greater number of a number x is the first greater number to its traversing-order next in the array, which means
 # you could search circularly to find its next greater number. If it doesn't exist, return -1 for this number.
 
-class Solution(object):
-    def nextGreaterElements(self, nums):
+# class Solution(object):
+#     def nextGreaterElements(self, nums):
     
-       arr = [-1] * len(nums)
-       stack=[]
-       i=0
-       for i in range(2*len(nums)):
-           idx=i%len(nums)
-           while stack and nums[idx]>nums[stack[-1]]:
-               arr[stack.pop()]=(nums[idx])
-           if i<len(nums):
-            stack.append(idx)
+#        arr = [-1] * len(nums)
+#        stack=[]
+#        i=0
+#        for i in range(2*len(nums)):
+#            idx=i%len(nums)
+#            while stack and nums[idx]>nums[stack[-1]]:
+#                arr[stack.pop()]=(nums[idx])
+#            if i<len(nums):
+#             stack.append(idx)
       
-       return arr
-    
+#        return arr
+
+#     Given an array of integers temperatures represents the daily temperatures, return an
+#     array answer such that answer[i] is the number of days you have to wait after the ith day to get 
+#     a warmer temperature. If there is no future day for which this is possible, keep answer[i] == 0 instead.
+
+class Solution(object):
+    def dailyTemperatures(self, temperatures):
+      arr=[0]*len(temperatures)
+      stack=[]
+      i=0
+      for i in range(len(temperatures)):
+          while stack and temperatures[i]>temperatures[stack[-1]]:
+              distance=i-(stack[-1])
+              arr[stack.pop()]=distance
+          stack.append(i)
+      return arr
