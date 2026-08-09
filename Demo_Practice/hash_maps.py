@@ -122,20 +122,39 @@
 
 # Return the sum of all the unique elements of nums.
 
+# class Solution(object):
+#     def sumOfUnique(self, nums):
+#         d={}
+#         res=0
+#         for i in range(len(nums)):
+#             d[nums[i]]=d.get(nums[i],0)+1
+            
+#         for x in d:
+            
+#             if d[x]==1:
+#                 res+=x
+#         return res
+                
+                
+# obj=Solution()
+# nums = [1,2,3,2]
+# print(obj.sumOfUnique(nums))
+
+# Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+
 class Solution(object):
-    def sumOfUnique(self, nums):
+    def topKFrequent(self, nums, k):
         d={}
-        res=0
-        for i in range(len(nums)):
-            d[nums[i]]=d.get(nums[i],0)+1
-            
-        for x in d:
-            
-            if d[x]==1:
-                res+=x
-        return res
-                
-                
-obj=Solution()
-nums = [1,2,3,2]
-print(obj.sumOfUnique(nums))
+        arr=[]
+        for nums in nums:
+            d[nums]=d.get(nums,0)+1
+        for _ in range(k):
+            x=max(d.values())
+            for key in d:
+                if d[key]==x:
+                    arr.append(key)
+                    del d[key]
+                    break
+        return arr
+           
+ 
