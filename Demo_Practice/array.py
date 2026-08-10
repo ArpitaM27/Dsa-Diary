@@ -476,41 +476,59 @@
 
 # Notice that the solution set must not contain duplicate triplets.
 
-class Solution(object):
-    def threeSum(self, nums):
-        arr = []
-        nums.sort()
+# class Solution(object):
+#     def threeSum(self, nums):
+#         arr = []
+#         nums.sort()
 
-        for i in range(len(nums)):
+#         for i in range(len(nums)):
 
-            # Skip duplicate fixed numbers
-            if i > 0 and nums[i] == nums[i - 1]:
-                continue
+#             # Skip duplicate fixed numbers
+#             if i > 0 and nums[i] == nums[i - 1]:
+#                 continue
 
-            left = i + 1
-            right = len(nums) - 1
+#             left = i + 1
+#             right = len(nums) - 1
 
-            while left < right:
-                total = nums[i] + nums[left] + nums[right]
+#             while left < right:
+#                 total = nums[i] + nums[left] + nums[right]
 
-                if total < 0:
-                    left += 1
+#                 if total < 0:
+#                     left += 1
 
-                elif total > 0:
-                    right -= 1
+#                 elif total > 0:
+#                     right -= 1
 
-                else:
-                    arr.append([nums[i], nums[left], nums[right]])
+#                 else:
+#                     arr.append([nums[i], nums[left], nums[right]])
 
-                    left += 1
-                    right -= 1
+#                     left += 1
+#                     right -= 1
 
-                    # Skip duplicate left values
-                    while left < right and nums[left] == nums[left - 1]:
-                        left += 1
+#                     # Skip duplicate left values
+#                     while left < right and nums[left] == nums[left - 1]:
+#                         left += 1
 
-                    # Skip duplicate right values
-                    while left < right and nums[right] == nums[right + 1]:
-                        right -= 1
+#                     # Skip duplicate right values
+#                     while left < right and nums[right] == nums[right + 1]:
+#                         right -= 1
 
-        return arr
+#         return arr
+    
+# Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
+
+# Return any array that satisfies this condition.
+
+
+# class Solution(object):
+#     def sortArrayByParity(self, nums):
+#        slow=0
+#        fast=0
+#        while fast<len(nums):
+#            if nums[fast]%2==0:
+#                nums[slow],nums[fast]=nums[fast],nums[slow]
+#                slow+=1
+#            fast+=1
+#        return nums                                                                                                                                          
+
+

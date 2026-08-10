@@ -50,21 +50,24 @@
 # The distance between two points on the X-Y plane is the Euclidean distance (i.e., √(x1 - x2)2 + (y1 - y2)2).
 
 # You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in).
-import heapq
+# import heapq
 
-class Solution(object):
-    def kClosest(self, points, k):
-        heap = []
+# class Solution(object):
+#     def kClosest(self, points, k):
+#         heap = []
 
-        for point in points:
-            x = point[0]
-            y = point[1]
+#         for point in points:
+#             x = point[0]
+#             y = point[1]
 
-            distance = x*x + y*y
+#             distance = x*x + y*y
 
-            heapq.heappush(heap, (-distance, point))
+#             heapq.heappush(heap, (-distance, point))
 
-            if len(heap) > k:
-                heapq.heappop(heap)
+#             if len(heap) > k:
+#                 heapq.heappop(heap)
 
-        return [point for distance, point in heap]
+#         return [point for distance, point in heap]
+
+
+ 
