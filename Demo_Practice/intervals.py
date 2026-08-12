@@ -66,27 +66,48 @@
 # "a" if a == b
 
 
-class Solution(object):
-    def summaryRanges(self, nums):
-        arr = []
+# class Solution(object):
+#     def summaryRanges(self, nums):
+#         arr = []
         
-        if not nums:
-            return arr
+#         if not nums:
+#             return arr
 
-        start = nums[0]
+#         start = nums[0]
 
-        for i in range(1, len(nums)):
-            if nums[i] != nums[i-1] + 1:
-                if start == nums[i-1]:
-                    arr.append(str(start))
-                else:
-                    arr.append(str(start) + "->" + str(nums[i-1]))
+#         for i in range(1, len(nums)):
+#             if nums[i] != nums[i-1] + 1:
+#                 if start == nums[i-1]:
+#                     arr.append(str(start))
+#                 else:
+#                     arr.append(str(start) + "->" + str(nums[i-1]))
 
-                start = nums[i]
+#                 start = nums[i]
 
-        if start == nums[-1]:
-            arr.append(str(start))
-        else:
-            arr.append(str(start) + "->" + str(nums[-1]))
+#         if start == nums[-1]:
+#             arr.append(str(start))
+#         else:
+#             arr.append(str(start) + "->" + str(nums[-1]))
 
-        return arr
+#         return arr
+
+
+# There are some spherical balloons taped onto a flat wall that represents the XY-plane. The balloons are represented as a 2D integer array points where points[i] = [xstart, xend] denotes a balloon whose horizontal diameter stretches between xstart and xend. You do not know the exact y-coordinates of the balloons.
+
+# Arrows can be shot up directly vertically (in the positive y-direction) from different points along the x-axis. A balloon with xstart and xend is burst by an arrow shot at x if xstart <= x <= xend. There is no limit to the number of arrows that can be shot. A shot arrow keeps traveling up infinitely, bursting any balloons in its path.
+
+# Given the array points, return the minimum number of arrows that must be shot to burst all balloons.
+
+class Solution(object):
+    def findMinArrowShots(self, points):
+        points.sort(key=lambda x: x[1])
+
+        arrows = 1
+        arrow = points[0][1]
+
+        for start, end in points[1:]:
+            if start > arrow:
+                arrows += 1
+                arrow = end
+
+        return arrows
