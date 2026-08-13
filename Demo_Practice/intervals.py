@@ -98,16 +98,18 @@
 
 # Given the array points, return the minimum number of arrows that must be shot to burst all balloons.
 
-class Solution(object):
-    def findMinArrowShots(self, points):
-        points.sort(key=lambda x: x[1])
+# class Solution(object):
+#     def findMinArrowShots(self, points):
+#         points.sort(key=lambda x: x[1])
 
-        arrows = 1
-        arrow = points[0][1]
+#         arrows = 1
+#         arrow = points[0][1]
 
-        for start, end in points[1:]:
-            if start > arrow:
-                arrows += 1
-                arrow = end
+#         for start, end in points[1:]:
+#             if start > arrow:
+#                 arrows += 1
+#                 arrow = end
 
-        return arrows
+#         return arrows
+
+
