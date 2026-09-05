@@ -4,15 +4,15 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution(object):
+class Solution:
     def invertTree(self, root):
+
         if root is None:
             return None
 
-        left = self.invertTree(root.left)
-        right = self.invertTree(root.right)
+        root.left, root.right = root.right, root.left
 
-        root.left = right
-        root.right = left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
 
         return root
